@@ -27,6 +27,10 @@ namespace SnakeAndLadder
                     case 1:
                         Console.WriteLine("This is Lader");
                         int val =random.Next(1, 6);
+                        if ((position + val) > 100)
+                        {
+                            position = position;
+                        }
                         position = position + val;
                         Console.WriteLine("Current Position: " + position);
                         break;
@@ -34,6 +38,8 @@ namespace SnakeAndLadder
                         Console.WriteLine("This is Snake");
                         int val2 = random.Next(1, 6);
                         position=position - val2;
+                        if(position < 0)
+                            position = 0;
                         Console.WriteLine("Current Position: " + position);
                         break;
                     default:
