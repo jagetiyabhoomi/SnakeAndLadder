@@ -9,6 +9,7 @@ namespace SnakeAndLadder
     public class Game
     {
         public int position = 0;
+        public int NumberofRolls = 1;
         public void StartTheGame()
         {
             Random random = new Random();
@@ -23,6 +24,7 @@ namespace SnakeAndLadder
                         Console.WriteLine("This is No Play");
                         position = position;
                         Console.WriteLine("Current Position: " + position);
+                        NumberofRolls = NumberofRolls + 1;
                         break;
                     case 1:
                         Console.WriteLine("This is Lader");
@@ -33,6 +35,7 @@ namespace SnakeAndLadder
                         }
                         position = position + val;
                         Console.WriteLine("Current Position: " + position);
+                        NumberofRolls = NumberofRolls + 1;
                         break;
                     case 2:
                         Console.WriteLine("This is Snake");
@@ -41,6 +44,7 @@ namespace SnakeAndLadder
                         if(position < 0)
                             position = 0;
                         Console.WriteLine("Current Position: " + position);
+                        NumberofRolls = NumberofRolls + 1;
                         break;
                     default:
                         Console.WriteLine("Nothing");
@@ -55,6 +59,7 @@ namespace SnakeAndLadder
             if(position > 100)
             { position = 100; }
             Console.WriteLine("Final Position: " + position);
+            Console.WriteLine("Number of time Dice Rolls: " + NumberofRolls);
         }
     }
 }
